@@ -1,0 +1,57 @@
+[
+    {
+        "title": "Remote Work Foundations",
+        "issuer": "LinkedIn",
+        "date_issued": "Sep 2023",
+        "skills": "Telecommuting"
+    },
+    {
+        "title": "Prepare for the Google Cloud Platform Associate Cloud Engineer Exam",
+        "issuer": "LinkedIn",
+        "date_issued": "Aug 2023",
+        "skills": "Google Cloud Platform (GCP)"
+    },
+    {
+        "title": "Unix Essential Training",
+        "issuer": "LinkedIn",
+        "date_issued": "Jul 2023",
+        "skills": "Unix"
+    },
+    {
+        "title": "AWS Academy Graduate - AWS Academy Cloud Foundations",
+        "issuer": "Amazon Web Services (AWS)",
+        "date_issued": "Jun 2023",
+        "skills": "Amazon Web Services (AWS)"
+    },
+    {
+        "title": "Getting Started with Google Cloud",
+        "issuer": "LinkedIn",
+        "date_issued": "Jun 2023",
+        "skills": "Google Cloud Platform (GCP)"
+    },
+    {
+        "title": "Google Cloud Data and Storage Foundations",
+        "issuer": "LinkedIn",
+        "date_issued": "Jun 2023",
+        "skills": "Google Cloud Platform (GCP)"
+    },
+    {
+        "title": "Google Cloud Foundations",
+        "issuer": "LinkedIn",
+        "date_issued": "Jun 2023",
+        "skills": "Google Cloud Platform (GCP)"
+    },
+    {
+        "title": "Learning Google Cloud Security",
+        "issuer": "LinkedIn",
+        "date_issued": "Jun 2023",
+        "skills": "Google Cloud Platform (GCP)"
+    },
+    {
+        "title": "Obtained and Held a L2 Gaming License",
+        "issuer": "IGC",
+        "date_issued": "May 2017",
+        "date_expired": "Aug 2017",
+        "skills": "Computer Science"
+    }
+]

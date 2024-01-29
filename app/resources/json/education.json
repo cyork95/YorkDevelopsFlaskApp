@@ -1,0 +1,20 @@
+[
+  {
+    "degree": "Master of Science in Data Science",
+    "institution": "Ball State University",
+    "year": "2022 - 2023",
+    "description": "Online Masters program for Data Science and Analytics."
+  },
+  {
+    "degree": "Bachelors of Science in Computer Science",
+    "institution": "Ball State University",
+    "year": "2014 - 2018",
+    "description": "Major in Computer Science. Minor in Sociology."
+  },
+  {
+    "degree": "Core 40 with Academic Honors",
+    "institution": "Bedford North Lawrence",
+    "year": "2010 - 2014",
+    "description": "Major in Computer Science. Minor in Sociology."
+  }
+]

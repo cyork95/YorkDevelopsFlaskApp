@@ -1,0 +1,142 @@
+[
+    {
+        "course_name": "Advanced Programming",
+        "course_code": "CS 222",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Advanced Web Development",
+        "course_code": "CS 310",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Algorithms",
+        "course_code": "CS 224",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Artificial Intelligence and Machine Learning",
+        "course_code": "ICS 625",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "CS4MS",
+        "course_code": "CS 499",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Cloud Technologies",
+        "course_code": "ICS 664",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Computer Science 1",
+        "course_code": "CS 120",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Computer Science 2",
+        "course_code": "CS 121",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Data Analytics for Health Sciences",
+        "course_code": "DSCI 610",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Data Mining",
+        "course_code": "CS 654",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Data Mining",
+        "course_code": "CS 455",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Data Visualization",
+        "course_code": "DSCI 605",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Database Design",
+        "course_code": "CS 346",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Discrete Structures",
+        "course_code": "CS 124",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Dist Proc and Networks",
+        "course_code": "CS 327",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Introduction to Computers",
+        "course_code": "CS 104",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Introduction to Data Science",
+        "course_code": "DSCI 601",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Introduction to Python for Data Analytics",
+        "course_code": "CS 617",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Mobile Software Development",
+        "course_code": "CS 230",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Networking",
+        "course_code": "CS 327",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Operating Systems",
+        "course_code": "CS 376",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Programming Languages",
+        "course_code": "CS 335",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Social and Professional Issues",
+        "course_code": "CS 239",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Software Engineering 1",
+        "course_code": "CS 495",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Software Engineering 2",
+        "course_code": "CS 498",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Statistical Methods for Data Science",
+        "course_code": "DSCI 602",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Theory of Computation 1",
+        "course_code": "CS 380",
+        "institution": "Ball State University"
+    },
+    {
+        "course_name": "Web Development",
+        "course_code": "CS 110",
+        "institution": "Ball State University"
+    }
+]

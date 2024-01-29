@@ -1,0 +1,178 @@
+/* General Body Styles */
+body {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif; /* Change to your preferred font */
+    color: #ffffff; /* Choose a color that fits the dark theme */
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-shadow: 2px 2px 4px #000000;
+    border-bottom: 2px solid #4caf50; /* Colorful underline */
+    padding-bottom: 10px;
+    display: inline-block; /* Keeps the underline only as wide as the text */
+    font-size: calc(24px + 2vw); /* Adjusts size based on viewport width */
+}
+
+/* Header Styles */
+header {
+    background-color: #1c1c1c;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Portfolio Styles */
+#portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.project {
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 15px;
+    padding: 20px;
+    width: 300px;
+}
+
+.project h2 {
+    color: #4caf50; /* Light green for titles */
+}
+
+.project a {
+    color: #9acd32; /* Lighter green for links */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1c1c1c;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .project {
+        width: 90%;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .project {
+        width: 45%;
+    }
+}
+
+@media (min-width: 1025px) {
+    .project {
+        width: 30%;
+    }
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333; /* Or any color you prefer */
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #111; /* Hover effect */
+}
+
+#work-history {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.work {
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 15px;
+    padding: 20px;
+    width: 300px;
+}
+
+.work h3 {
+    color: #4caf50; /* Or any other color you prefer */
+}
+
+/* You can add more specific styles as needed */
+#courses .course {
+    /* Your styling here */
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    margin: 15px;
+    padding: 20px;
+    width: 300px;
+    /* ... other styles ... */
+}
+
+#education .education-item {
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    margin: 15px;
+    padding: 20px;
+    width: 300px; /* Adjust width as needed */
+    /* ... other styles ... */
+}
+
+#licenses-certifications .certification-item {
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    margin: 15px;
+    padding: 20px;
+    width: 300px; /* Adjust width as needed */
+    /* ... other styles ... */
+}
+
+#courses, #work-history, #portfolio, #education, #licenses-certifications  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* This centers the items in the row */
+    padding: 20px;
+}
+
+.course, .work, .project, .education-item, .certification-item {
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 15px;
+    padding: 20px;
+    width: 300px; /* Adjust the width as necessary */
+
+    /* Optional: Add a min-width and max-width for better responsiveness */
+    min-width: 250px;
+    max-width: 350px;
+}
+
+

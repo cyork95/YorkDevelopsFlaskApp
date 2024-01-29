@@ -1,0 +1,62 @@
+<!-- portfolio.html -->
+{% extends "base.html" %}
+{% block content %}
+    <h1>Work History</h1>
+    <div id="work-history">
+        {% for work in work_history %}
+            <div class="work">
+                <h3>{{ work.job_title }} at {{ work.company }}</h3>
+                <p>{{ work.description }}</p>
+                <p><strong>Duration:</strong> {{ work.duration }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <h1>My Projects</h1>
+    <div id="portfolio">
+        {% for project in projects %}
+            <div class="project">
+                <h2>{{ project.title }}</h2>
+                <div class="project-description">
+                    {{ project.description|safe }}
+                </div>
+                {% if project.github_link != 'N/A' %}
+                    <a href="{{ project.github_link }}">Source Code</a>
+                {% else %}
+                    <p>Source code not available</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+    <h1>Education</h1>
+    <div id="education">
+        {% for edu in education %}
+            <div class="education-item">
+                <h3>{{ edu.degree }}</h3>
+                <p><strong>Institution:</strong> {{ edu.institution }}</p>
+                <p><strong>Year:</strong> {{ edu.year }}</p>
+                <p>{{ edu.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <h1>Licenses & Certifications</h1>
+    <div id="licenses-certifications">
+        {% for item in licenses_certifications %}
+            <div class="certification-item">
+                <h3>{{ item.title }}</h3>
+                <p><strong>Issued by:</strong> {{ item.issuer }}</p>
+                <p><strong>Date Issued:</strong> {{ item.date_issued }}</p>
+                <p>{{ item.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <h1>Courses Taken</h1>
+    <div id="courses">
+        {% for course in courses %}
+            <div class="course">
+                <h3>{{ course.course_name }}</h3>
+                <p><strong>Institution:</strong> {{ course.institution }}</p>
+                <p>{{ course.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
