@@ -1,0 +1,115 @@
+<!-- horoscope.html -->
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <h1>Daily Horoscope</h1>
+        <div class="select-container">
+            <select id="zodiacSelect">
+                <option value="">Select your sign</option>
+                <option value="aries">Aries (Mar 21 - Apr 19)</option>
+                <option value="taurus">Taurus (Apr 20 - May 20)</option>
+                <option value="gemini">Gemini (May 21 - Jun 20)</option>
+                <option value="cancer">Cancer (Jun 21 - Jul 22)</option>
+                <option value="leo">Leo (Jul 23 - Aug 22)</option>
+                <option value="virgo">Virgo (Aug 23 - Sep 22)</option>
+                <option value="libra">Libra (Sep 23 - Oct 22)</option>
+                <option value="scorpio">Scorpio (Oct 23 - Nov 21)</option>
+                <option value="sagittarius">Sagittarius (Nov 22 - Dec 21)</option>
+                <option value="capricorn">Capricorn (Dec 22 - Jan 19)</option>
+                <option value="aquarius">Aquarius (Jan 20 - Feb 18)</option>
+                <option value="pisces">Pisces (Feb 19 - Mar 20)</option>
+            </select>
+        </div>
+        <button onclick="getHoroscope()">Get Horoscope</button>
+        <div id="horoscopeContainer">
+            <div class="horoscopeSection" id="dailyHoroscope">
+                <h4>Daily Horoscope</h4>
+                <p></p>
+            </div>
+            <div class="horoscopeSection" id="loveHoroscope">
+                <h4>Love Horoscope</h4>
+                <p></p>
+            </div>
+            <div class="horoscopeSection" id="workHoroscope">
+                <h4>Work Horoscope</h4>
+                <p></p>
+            </div>
+            <div class="horoscopeSection" id="datingHoroscope">
+                <h4>Daily Dating Horoscope</h4>
+                <p></p>
+            </div>
+            <div class="horoscopeSection" id="singlesHoroscope">
+                <h4>Daily Singles Horoscope</h4>
+                <p></p>
+            </div>
+            <div class="horoscopeSection" id="beautyHoroscope">
+                <h4>Daily Beauty Horoscope</h4>
+                <p></p>
+            </div>
+            <div class="horoscopeSection" id="foodHoroscope">
+                <h4>Daily Food Horoscope</h4>
+                <p></p>
+            </div>
+            <div class="horoscopeSection" id="homeHoroscope">
+                <h4>Daily Home Horoscope</h4>
+                <p></p>
+            </div>
+            <div class="horoscopeSection" id="catHoroscope">
+                <h4>Daily Cat Horoscope</h4>
+                <p></p>
+            </div>
+            <div class="horoscopeSection" id="bonusHoroscope">
+                <h4>Daily Bonus Horoscope</h4>
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function updateHoroscopeContent(data) {
+            if (data.daily) {
+                document.getElementById('dailyHoroscope').innerHTML = `<h4>Daily Horoscope</h4><p>${data.daily}</p>`;
+            }
+            if (data.love) {
+                document.getElementById('loveHoroscope').innerHTML = `<h4>Love Horoscope</h4><p>${data.love}</p>`;
+            }
+            if (data.work) {
+                document.getElementById('workHoroscope').innerHTML = `<h4>Work Horoscope</h4><p>${data.work}</p>`;
+            }
+            if (data.dating) {
+                document.getElementById('datingHoroscope').innerHTML = `<h4>Dating Horoscope</h4><p>${data.dating}</p>`;
+            }
+            if (data.singles) {
+                document.getElementById('singlesHoroscope').innerHTML = `<h4>Singles Horoscope</h4><p>${data.singles}</p>`;
+            }
+            if (data.beauty) {
+                document.getElementById('beautyHoroscope').innerHTML = `<h4>Beauty Horoscope</h4><p>${data.beauty}</p>`;
+            }
+            if (data.food) {
+                document.getElementById('foodHoroscope').innerHTML = `<h4>Food Horoscope</h4><p>${data.food}</p>`;
+            }
+            if (data.home) {
+                document.getElementById('homeHoroscope').innerHTML = `<h4>Home Horoscope</h4><p>${data.home}</p>`;
+            }
+            if (data.cat) {
+                document.getElementById('catHoroscope').innerHTML = `<h4>Cat Horoscope</h4><p>${data.cat}</p>`;
+            }
+            if (data.bonus) {
+                document.getElementById('bonusHoroscope').innerHTML = `<h4>Bonus Horoscope</h4><p>${data.bonus}</p>`;
+            }
+
+            const horoscopeSections = document.getElementsByClassName('horoscopeSection');
+            for (let i = 0; i < horoscopeSections.length; i++) {
+                horoscopeSections[i].style.display = 'block';
+            }
+        }
+
+        function getHoroscope() {
+            var selectedSign = document.getElementById('zodiacSelect').value;
+            fetch(`/get_horoscope?sign=${encodeURIComponent(selectedSign)}`)
+                .then(response => response.json())
+                .then(data => updateHoroscopeContent(data))
+                .catch(error => console.error('Error:', error));
+        }
+
+    </script>
+{% endblock %}

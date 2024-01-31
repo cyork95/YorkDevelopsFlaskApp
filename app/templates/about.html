@@ -1,0 +1,55 @@
+<!-- about.html -->
+{% extends "base.html" %}
+{% block content %}
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .skills, .interests {
+            margin-top: 20px;
+        }
+    </style>
+    <div class="container">
+        <h1>About Me</h1>
+        <h2>Hello, I'm CoYo!</h2>
+        <p>Cloud Engineer @ CVS Health | Data Pipelines, Clean Code | Masters in Data Science</p>
+
+        <h1>This Website</h1>
+        <p>This website was built to hold some of the random things I wanted to tinker with and share with my family.
+           I am hoping I will keep up and continually update and improve this website.
+           This website was built with Python and Flask as a means to sharpen those skills.</p>
+
+        <div class="skills">
+            <h1>Professional Skills</h1>
+            <p>As a Cloud Engineer specialized in Data Pipelines, I am proficient in:</p>
+            <ul>
+                <li>Building and maintaining cloud-based data infrastructure</li>
+                <li>Developing scalable data pipelines</li>
+                <li>Ensuring data quality and efficiency</li>
+                <li>Programming in Python, SQL, and other relevant technologies</li>
+                <li>Working with Big Data technologies and machine learning algorithms</li>
+            </ul>
+        </div>
+
+        <div class="interests">
+            <h1>Personal Interests</h1>
+            <p>When I'm not working, I enjoy:</p>
+            <ul>
+                <li>Exploring new technologies and programming languages</li>
+                <li>Participating in cloud computing and data science communities</li>
+                <li>Reading about advancements in AI and machine learning</li>
+                <li>Outdoor activities like hiking and going for walks</li>
+            </ul>
+        </div>
+        <div class="contact">
+            <h1>Contact Me</h1>
+            <p>Feel free to reach out to me on <a href="https://www.linkedin.com/in/cody-york-data-engineer">LinkedIn</a>.</p>
+        </div>
+    </div>
+{% endblock %}

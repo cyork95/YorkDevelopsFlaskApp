@@ -155,7 +155,7 @@ nav ul li a:hover {
     /* ... other styles ... */
 }
 
-#courses, #work-history, #portfolio, #education, #licenses-certifications  {
+#courses, #work-history, #portfolio, #education, #licenses-certifications {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* This centers the items in the row */
@@ -175,4 +175,65 @@ nav ul li a:hover {
     max-width: 350px;
 }
 
+.container {
+    max-width: 600px;
+    margin: auto;
+}
 
+.select-container {
+    margin-top: 20px;
+}
+
+select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #1e1e1e; /* Dark elements */
+    color: #ffffff; /* Light text */
+}
+
+button {
+    background-color: #007bff;
+    border: none;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#horoscopeResult {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #1e1e1e; /* Dark elements */
+    color: #ffffff; /* Light text */
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+
+#horoscopeContainer {
+    max-width: 800px;
+    margin: auto;
+}
+
+.horoscopeSection {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.horoscopeSection h4 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.horoscopeSection p {
+    text-align: left;
+    color: #333;
+}

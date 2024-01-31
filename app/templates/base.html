@@ -1,23 +1,25 @@
 <!-- templates/base.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <!-- Add other head elements like CSS links, meta tags -->
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('portfolio') }}">Portfolio</a></li>
-            <!-- Add other navigation links here -->
-        </ul>
-    </nav>
+<nav>
+    <ul>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('portfolio') }}">Portfolio</a></li>
+        <!-- Add other navigation links here -->
+        <li><a href="/horoscope">Daily Horoscope</a></li>
+        <li><a href="/about">About Me</a></li>
+    </ul>
+</nav>
 
-    {% block content %}
-    {% endblock %}
+{% block content %}
+{% endblock %}
 
-    <!-- Add footer or other common elements here -->
+<!-- Add footer or other common elements here -->
 </body>
 </html>
