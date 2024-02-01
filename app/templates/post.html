@@ -1,0 +1,8 @@
+<!-- post.html -->
+{% extends "base.html" %}
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content | safe }}</p>
+    <a href="{{ url_for('blog') }}">Back to Home</a>
+    <!-- You can add more functionality here like edit and delete buttons -->
+{% endblock %}

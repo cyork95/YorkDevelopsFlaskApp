@@ -4,16 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bfaaed03-1499-4d6e-a03e-be367fde3f64" name="Changes" comment="add portfolio page to the app">
-      <change afterPath="$PROJECT_DIR$/app/templates/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/horoscope.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/tests/test_about_me.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/tests/test_horoscope.py" afterDir="false" />
+    <list default="true" id="bfaaed03-1499-4d6e-a03e-be367fde3f64" name="Changes" comment="add daily horoscope page to the app">
+      <change afterPath="$PROJECT_DIR$/app/create_tables.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/add_post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/blog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/alembic.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/env.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/script.py.mako" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/versions/0388196d5c0e_added_author_column.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,19 +56,23 @@
   "associatedIndex": 0
 }]]></component>
   <component name="ProjectId" id="2bdgkPSgGnkOtViUI7z7y9YgB19" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "DefaultHtmlFileTemplate": "HTML File",
     "Flask server.Flask (app.py).executor": "Run",
     "Python tests.Python tests for test_about_me.test_about_page.executor": "Run",
     "Python tests.Python tests for test_horoscope.test_get_horoscope.executor": "Run",
     "Python tests.Python tests for test_horoscope.test_scrape_horoscope.executor": "Run",
     "Python tests.Python tests for test_portfolio.test_portfolio_route.executor": "Run",
+    "Python.create_tables.executor": "Run",
     "Python.run.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -84,7 +93,7 @@
       <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_horoscope.test_scrape_horoscope">
+  <component name="RunManager">
     <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="yorkDevelopsFlaskForge" />
       <option name="ENV_FILES" value="" />
@@ -190,9 +199,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.run" />
         <item itemvalue="Python tests.Python tests for test_horoscope.test_scrape_horoscope" />
         <item itemvalue="Python tests.Python tests for test_horoscope.test_get_horoscope" />
-        <item itemvalue="Python.run" />
         <item itemvalue="Python tests.Python tests for test_about_me.test_about_page" />
         <item itemvalue="Python tests.Python tests for test_portfolio.test_portfolio_route" />
       </list>
@@ -213,7 +222,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1706550512336</updated>
-      <workItem from="1706550516381" duration="25532000" />
+      <workItem from="1706550516381" duration="31920000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -239,7 +248,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706567700872</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add daily horoscope page to the app">
+      <option name="closed" value="true" />
+      <created>1706717281705</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706717281705</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,14 +274,17 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="update code and reformat project.&#10;add welcome page basic." />
     <MESSAGE value="add portfolio page to the app" />
-    <option name="LAST_COMMIT_MESSAGE" value="add portfolio page to the app" />
+    <MESSAGE value="add daily horoscope page to the app" />
+    <option name="LAST_COMMIT_MESSAGE" value="add daily horoscope page to the app" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/yorkDevelopsFlaskForge$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1706551479130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/yorkDevelopsFlaskForge$run.coverage" NAME="run Coverage Results" MODIFIED="1706639206916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/yorkDevelopsFlaskForge$.coverage" NAME=" Coverage Results" MODIFIED="1706717168729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/tests" />
+    <SUITE FILE_PATH="coverage/yorkDevelopsFlaskForge$.coverage" NAME=" Coverage Results" MODIFIED="1706717257817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/tests" />
+    <SUITE FILE_PATH="coverage/yorkDevelopsFlaskForge$run.coverage" NAME="run Coverage Results" MODIFIED="1706724097537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/yorkDevelopsFlaskForge$create_tables.coverage" NAME="create_tables Coverage Results" MODIFIED="1706723819404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
   </component>
 </project>

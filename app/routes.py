@@ -2,9 +2,10 @@ import json
 import os
 
 import requests
-from flask import render_template, request, jsonify
+from flask import render_template, request, jsonify, redirect, url_for
 
-from app import app
+from app import app, db
+from app.models import BlogPost
 
 from bs4 import BeautifulSoup
 
@@ -17,6 +18,30 @@ def index():
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+
+@app.route('/blog')
+def blog():
+    posts = BlogPost.query.all()
+    return render_template('blog.html', posts=posts)
+
+
+@app.route('/blog/post/<int:post_id>')
+def post(post_id):
+    post = BlogPost.query.get_or_404(post_id)
+    return render_template('post.html', post=post)
+
+
+@app.route('/blog/add', methods=['GET', 'POST'])
+def add_post():
+    if request.method == 'POST':
+        title = request.form['title']
+        content = request.form['content']
+        new_post = BlogPost(title=title, content=content)
+        db.session.add(new_post)
+        db.session.commit()
+        return redirect(url_for('blog'))
+    return render_template('add_post.html')
 
 
 @app.route('/portfolio')

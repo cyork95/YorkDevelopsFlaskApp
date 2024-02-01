@@ -1,0 +1,16 @@
+<!-- blog.html -->
+{% extends "base.html" %}
+{% block content %}
+    <h1>Blog Posts</h1>
+    <div style="margin-bottom: 20px;">
+        <button onclick="location.href='{{ url_for('add_post') }}'">Add New Post</button>
+    </div>
+    {% for post in posts %}
+        <div class="post">
+            <h2>{{ post.title }}</h2>
+            <p class="author">Posted by {{ post.author }} on {{ post.date_posted.strftime('%Y-%m-%d') }}</p>
+            <p class="summary">{{ post.summary }}</p>
+            <a href="{{ url_for('post', post_id=post.id) }}">Read More</a>
+        </div>
+    {% endfor %}
+{% endblock %}
