@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/yorkDevelopsFlaskForge.iml" filepath="$PROJECT_DIR$/.idea/yorkDevelopsFlaskForge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/YorkDevelopsFlaskApp.iml" filepath="$PROJECT_DIR$/.idea/YorkDevelopsFlaskApp.iml" />
     </modules>
   </component>
 </project>

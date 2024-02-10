@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Fill in the Placeholders for the Story</h1>
+<form action="{{ url_for('generate_story', session_id=session.id) }}" method="post">
+    {% for placeholder_type, count in placeholder_counts.items() %}
+        <h2>{{ placeholder_type.capitalize() }}</h2>
+        {% for i in range(count) %}
+            <div>
+                <label for="{{ placeholder_type }}_{{ i }}">{{ placeholder_type.capitalize() }} {{ i }}:</label>
+                <input type="text" id="{{ placeholder_type }}_{{ i }}" name="{{ placeholder_type }}[]" required placeholder="Enter a {{ placeholder_type }}">
+            </div>
+        {% endfor %}
+    {% endfor %}
+    <button type="submit">Generate Story</button>
+</form>
+{% endblock %}

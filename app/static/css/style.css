@@ -237,3 +237,148 @@ button:hover {
     text-align: left;
     color: #333;
 }
+
+/* Enhance the general container for centered content */
+.container {
+    max-width: 800px; /* Adjust based on your preference */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1f1f1f; /* Dark background for the form area */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Style adjustments for form controls */
+.form-control {
+    background-color: #2c2c2c; /* Slightly lighter than the body background for contrast */
+    color: #ffffff; /* White text */
+    border: 1px solid #4caf50; /* Green border */
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 15px; /* Space out elements */
+}
+
+.form-control:focus {
+    outline: none; /* Removes the default focus outline */
+    border-color: #80bdff; /* Bootstrap's focus color for a bit of pop */
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Mimics Bootstrap's focus shadow */
+}
+
+/* Button styling to match your dark theme */
+.btn-primary {
+    background-color: #4caf50; /* Use the green for primary buttons */
+    border: none; /* Removes the default border */
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #3e8e41; /* Darker green on hover */
+}
+
+/* Navigation bar styling */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333; /* Dark background for nav */
+}
+
+nav ul li {
+    float: left;
+    position: relative; /* Needed for absolute positioning of dropdown content */
+}
+
+nav ul li a, .dropbtn {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover, .dropdown:hover .dropbtn {
+    background-color: #111; /* Darker background on hover */
+}
+
+/* Dropdown Content (Hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9; /* Light background for dropdown */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* General form styling */
+form {
+    background-color: #282c34; /* Dark background for the form */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px; /* Adjust based on your preference */
+    margin: auto;
+}
+
+form label {
+    color: #ffffff; /* White text for labels */
+    margin-top: 10px;
+    display: block; /* Ensures the label appears above the input field */
+}
+
+/* Style the select dropdown */
+select {
+    width: 100%; /* Full width */
+    padding: 8px;
+    margin-top: 5px; /* Space between the label and the select */
+    border-radius: 4px; /* Rounded borders */
+    background-color: #333; /* Darker than form background for contrast */
+    color: #ffffff; /* White text */
+    border: 1px solid #555; /* Slightly lighter border for visibility */
+}
+
+/* Style the text input */
+input[type="text"] {
+    width: 100%; /* Full width */
+    padding: 8px;
+    margin-top: 5px; /* Space between the label and the input */
+    border-radius: 4px; /* Rounded borders */
+    background-color: #333; /* Same as select for consistency */
+    color: #ffffff; /* White text */
+    border: 1px solid #555; /* Visible border */
+}
+
+/* Style the submit button */
+input[type="submit"] {
+    background-color: #4CAF50; /* Green background for visibility */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px; /* Rounded borders */
+    cursor: pointer;
+    margin-top: 10px; /* Space above the button */
+    display: block; /* Block level to fill the width of its container */
+    width: 100%; /* Full width */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}

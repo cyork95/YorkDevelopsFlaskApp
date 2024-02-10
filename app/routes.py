@@ -1,14 +1,30 @@
 import json
 import os
+import random
 
 import requests
-from flask import render_template, request, jsonify, redirect, url_for
+from flask import render_template, request, jsonify, redirect, url_for, session
+from openai import OpenAI
 
 from app import app, db
-from app.models import BlogPost
+from app.models import BlogPost, MLGameSession, MLUserInput
 
 from bs4 import BeautifulSoup
 
+import nltk
+
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# Use the environment variable
+client = OpenAI(
+    # This is the default and can be omitted
+    api_key=os.environ.get("OPENAI_API_KEY"),
+)
+
+app.secret_key = os.environ.get("SECRET_KEY")
 
 @app.route('/')
 def index():
@@ -209,3 +225,118 @@ def fetch_horoscope(sign):
     # Placeholder for fetching horoscope data
     # In reality, this would fetch data from an API or database
     return f"Today's horoscope for {sign.capitalize()} is ..."
+
+
+@app.route('/madlib')
+def madlib():
+    return render_template('madlib.html')
+
+
+@app.route('/process', methods=['POST'])
+def process():
+    theme = request.form['theme']
+    user_phrase = request.form['phrase']
+
+    # Generate a story with OpenAI
+    response = client.chat.completions.create(
+        messages=[
+            {
+                "role": "user",
+                "content": f"Tell me a story based on the theme of {theme} about {user_phrase}.",
+            }
+        ],
+        model="gpt-3.5-turbo",
+    )
+
+    # Assuming `response` is the object returned by the ChatCompletion API call
+    story = response.choices[0].message.content.strip()
+
+    # Create a new GameSession instance
+    new_session = MLGameSession(theme=theme, original_story=story)
+    db.session.add(new_session)
+    db.session.commit()
+
+    return redirect(url_for('fill_placeholders', session_id=new_session.id))
+
+
+@app.route('/fill_placeholders/<int:session_id>')
+def fill_placeholders(session_id):
+    game_session = MLGameSession.query.get_or_404(session_id)
+    story = game_session.original_story
+    # Now use NLTK to parse the generated story and identify placeholders
+    tokens = nltk.word_tokenize(story)
+    tagged_tokens = nltk.pos_tag(tokens)
+
+    # Initial collections of words by type
+    word_collections = {
+        'noun': [],
+        'verb': [],
+        'adjective': [],
+        'adverb': []
+    }
+
+    # Collect all words of each type
+    for word, tag in tagged_tokens:
+        if tag.startswith('NN'):
+            word_collections['noun'].append(word)
+        elif tag.startswith('VB'):
+            word_collections['verb'].append(word)
+        elif tag.startswith('JJ'):
+            word_collections['adjective'].append(word)
+        elif tag.startswith('RB'):
+            word_collections['adverb'].append(word)
+
+    # Initialize placeholders dictionary
+    placeholders = {'noun': [], 'verb': [], 'adjective': [], 'adverb': []}
+
+    # Select approximately 25% of each category randomly
+    for category in word_collections:
+        total_count = len(word_collections[category])
+        selected_count = max(int(total_count * 0.25), 1)  # Ensure at least one word is selected
+        placeholders[category] = random.sample(word_collections[category], selected_count)
+
+    placeholder_story = story
+    for category, words in placeholders.items():
+        for word in words:
+            # This assumes each word appears only once; adjust logic if words may appear multiple times
+            placeholder_story = placeholder_story.replace(word, f'[{category}]', 1)
+
+    placeholder_counts = {
+        'noun': placeholder_story.count('[noun]'),
+        'verb': placeholder_story.count('[verb]'),
+        'adjective': placeholder_story.count('[adjective]'),
+        'adverb': placeholder_story.count('[adverb]')
+    }
+
+    session['placeholder_story'] = placeholder_story  # Store placeholder story in session
+
+    # Note: Not modifying game_session.original_story in the database, just preparing text for display
+    return render_template('fill_placeholders.html', session=game_session,
+                               placeholder_story=placeholder_story, placeholder_counts=placeholder_counts)
+
+
+@app.route('/generate_story/<int:session_id>', methods=['POST'])
+def generate_story(session_id):
+    game_session = MLGameSession.query.get_or_404(session_id)
+
+    # Collect user inputs by placeholder type from the form
+    user_inputs = {ptype: request.form.getlist(f"{ptype}[]") for ptype in ['noun', 'verb', 'adjective', 'adverb']}
+
+    placeholder_story = session.get('placeholder_story', '')
+
+    # Copy the original story to work on
+    final_story = placeholder_story
+
+    # Replace placeholders with user inputs
+    for p_type, inputs in user_inputs.items():
+        for input_value in inputs:
+            placeholder = f"[{p_type}]"
+            if placeholder in final_story:
+                final_story = final_story.replace(placeholder, input_value, 1)
+
+    # Save the modified story (optional)
+    game_session.final_story = final_story
+    db.session.commit()
+
+    # Pass both original and final stories to the template
+    return render_template('story.html', original_story=game_session.original_story, final_story=final_story)

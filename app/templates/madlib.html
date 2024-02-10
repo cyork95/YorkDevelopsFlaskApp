@@ -1,0 +1,47 @@
+<!-- madlib.html -->
+{% extends "base.html" %}
+{% block content %}
+<h1>Create your Mad Lib!</h1>
+<form action="/process" method="post">
+    <label for="theme">Select a theme for the story:</label>
+    <select name="theme" id="theme">
+        <option value="Adventure">Adventure</option>
+        <option value="Romance">Romance</option>
+        <option value="Mystery">Mystery</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Horror">Horror</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Historical">Historical</option>
+        <option value="Action">Action</option>
+        <option value="Superhero">Superhero</option>
+        <option value="Thriller">Thriller</option>
+        <option value="Western">Western</option>
+        <option value="FairyTale">Fairy Tale</option>
+        <option value="Dystopian">Dystopian</option>
+        <option value="Mythology">Mythology</option>
+        <option value="Detective">Detective</option>
+        <option value="Cyberpunk">Cyberpunk</option>
+        <option value="SpaceOpera">Space Opera</option>
+        <option value="Steampunk">Steampunk</option>
+        <option value="UrbanFantasy">Urban Fantasy</option>
+        <option value="Paranormal">Paranormal</option>
+        <option value="TimeTravel">Time Travel</option>
+        <option value="PostApocalyptic">Post-Apocalyptic</option>
+        <option value="MagicalRealism">Magical Realism</option>
+        <option value="Gothic">Gothic</option>
+        <option value="Biographical">Biographical</option>
+        <option value="Political">Political</option>
+        <option value="Philosophical">Philosophical</option>
+        <option value="ComingOfAge">Coming of Age</option>
+        <option value="SliceOfLife">Slice of Life</option>
+        <option value="Satire">Satire</option>
+        <option value="Epic">Epic</option>
+        <option value="Noir">Noir</option>
+        <option value="Utopian">Utopian</option>
+    </select>
+    <label for="phrase">Enter a small set of ideas for ChatGPT to help it generate:</label>
+    <input type="text" id="phrase" name="phrase">
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
